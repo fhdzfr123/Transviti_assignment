@@ -43,16 +43,6 @@ class GitTrendingRepositoriesScreen extends StatelessWidget {
             return state.isErrorShow ? Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-
-                // Container(
-                //   height: MediaQuery.of(context).size.height *0.4,width: MediaQuery.of(context).size.width *0.7,
-                //   decoration: BoxDecoration(
-                //     image: DecorationImage(
-                //         image: AssetImage('assets/animation.gif'),
-                //       fit: BoxFit.cover
-                //     )
-                //   ),
-                // ),
                 Center(child: Image.asset('assets/animation.gif', fit: BoxFit.fill ,height: MediaQuery.of(context).size.height *0.3,width: MediaQuery.of(context).size.width *0.7,)),
                 SizedBox(height: MediaQuery.of(context).size.height *0.1),
                 Container(
@@ -66,12 +56,12 @@ class GitTrendingRepositoriesScreen extends StatelessWidget {
                         borderRadius: BorderRadius.circular(4),
                         //borderRadius: BorderRadius.zero, //Rectangular border
                       ),
-                      side: BorderSide(
+                      side: const BorderSide(
                         width: 1.0,
                         color: Colors.green,
                       ),
                     ),
-                    child: Text('RETRY', style: TextStyle(color: Colors.green),),
+                    child: const Text('RETRY', style: TextStyle(color: Colors.green),),
                   ),
                 ),
               ],
@@ -164,16 +154,16 @@ class GitTrendingRepositoriesScreen extends StatelessWidget {
                                   child: Text(state.repositories[index].fullName ?? ''),
 
                                 ),
-                                  const Row(
+                                  Row(
                                     children: [
-                                      Icon(Icons.fiber_manual_record, size: 10, color: Colors.blue),
-                                      SizedBox(width: 4),
-                                      Text("Python"),
-                                      SizedBox(width: 20),
+                                      const Icon(Icons.fiber_manual_record, size: 10, color: Colors.blue),
+                                      const SizedBox(width: 4),
+                                      Text(state.repositories[index].language ?? ''),
+                                      const SizedBox(width: 20),
 
-                                      Icon(Icons.star, size: 10, color: Colors.yellow),
-                                      SizedBox(width: 4),
-                                      Text("115"),
+                                      const Icon(Icons.star, size: 10, color: Colors.yellow),
+                                      const SizedBox(width: 4),
+                                      Text(state.repositories[index].stargazersCount.toString() ?? ''),
                                     ],
                                   ),
                               ],),
